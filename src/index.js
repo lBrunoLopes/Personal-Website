@@ -5,10 +5,11 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter} from "react-router-dom";
 
-<meta name="description" content="Best restaurant in town"/>;
-<meta name="og:title" content="Little Lemon"/>;
-<meta name="og:description" content="Family restaurant with traditional recipes"/>;
-<meta name="og:image" content=""/>;
+<meta name="description" content="Bruno Lopes"/>;
+<meta name="og:title" content="Bruno Lopes"/>;
+<meta name="og:description" content="Junior Web Developer"/>;
+<meta name="viewport" content="width=device-width, initial-scale=1"/>;
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
