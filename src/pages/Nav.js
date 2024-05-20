@@ -1,43 +1,65 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
-const Nav = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    const location = useLocation();
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    const getLinkClass = (path) => {
+      const isActive = location.pathname.trim() === path.trim();
+      const className = isActive
+          ? "text-white md:ml-4 block mt-4 md:mt-0 text-base md:text-lg active"
+          : "text-white md:ml-4 block mt-4 md:mt-0 text-base md:text-lg";
+
+      return className;
   };
 
-  return (
-    <nav className="bg-gray-800">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
-          <div className="flex items-center">
-            <div className="text-white font-bold text-2xl">
-              <Link to="/" className="text-white">Personal Website</Link>
+    return (
+        <nav className="bg-gray-800 py-1">
+            <div className="container mx-auto flex justify-between items-center px-4">
+              <Link to="/" className="text-white text-lg md:text-xl">Personal Website</Link>
+                <div className="md:hidden">
+                    <button
+                        onClick={() => setIsOpen(!isOpen)}
+                        className="text-white focus:outline-none"
+                    >
+                        <svg
+                            className="w-6 h-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            {isOpen ? (
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M6 18L18 6M6 6l12 12"
+                                />
+                            ) : (
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M4 6h16M4 12h16m-7 6h7"
+                                />
+                            )}
+                        </svg>
+                    </button>
+                </div>
+                <div className={`md:flex md:items-center ${isOpen ? 'block' : 'hidden'}`}>
+                  <Link to="/" className={getLinkClass("/")}>Home</Link>
+                  <Link to="/skills" className={getLinkClass("/skills")}>Skills</Link>
+                  <Link to="/experience" className={getLinkClass("/experience")}>Experience</Link>
+                  <Link to="/certificates" className={getLinkClass("/certificates")}>Certificates</Link>
+
+                </div>
             </div>
-            <div className="md:hidden">
-              <button className="text-white navbar-toggle" onClick={toggleMenu}>
-                ☰
-              </button>
-            </div>
-          </div>
-          <div className={`md:flex md:items-center ${isOpen ? 'block' : 'hidden'}`}>
-            <div className="space-x-4 md:flex">
-              <Link to="/" className="text-gray-300 hover:bg-gray-700 hover:text-white">Home</Link>
-              <Link to="/skills" className="text-gray-300 hover:bg-gray-700 hover:text-white">Skills</Link>
-              <Link to="/experience" className="text-gray-300 hover:bg-gray-700 hover:text-white">Experience</Link>
-              <Link to="/certificates" className="text-gray-300 hover:bg-gray-700 hover:text-white">Certificates</Link>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-  );
+        </nav>
+    );
 };
 
-export default Nav;
-
-
+export default Navbar;
 
 
