@@ -3,7 +3,7 @@ import React from "react";
 const Experience = () => {
     return (
         <div className="container mx-auto px-4 sm:px-6 lg:px-10 mt-8">
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-8 items-center justify-center" style={{ alignItems: 'stretch' }}>
                 <Event
                     title="Back Office Supervisor Manager"
                     company="Douro Azul, S.A"
@@ -56,14 +56,16 @@ const Experience = () => {
 };
 
 
+
+
 const Event = ({ title, company, duration, description }) => {
     return (
-        <div className="border border-gray-200 rounded-lg p-5 mx-auto" style={{ width: '700px' }}>
-            <div className="text-center"> {/* Add text-center class here */}
+        <div className="flex-grow border border-gray-200 rounded-lg p-5 text-center px-4 sm:px-6 lg:px-10" style={{ maxWidth: '900px' }}>
+            <div className="mx-10"> {/* Center the items */}
                 <h1 className="text-xl font-bold mb-2">{title}</h1>
                 <h3 className="text-gray-500 mb-2">{company}</h3>
                 <p className="mb-2">{duration}</p>
-                <ul className="list-disc pl-5 text-left"> {/* Adjust text alignment */}
+                <ul className="list-disc pl-8 text-left">
                     {description.map((item, index) => (
                         <li key={index}>{item}</li>
                     ))}
@@ -73,6 +75,4 @@ const Event = ({ title, company, duration, description }) => {
     );
 };
 
-
 export default Experience;
-
