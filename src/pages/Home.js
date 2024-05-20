@@ -1,22 +1,24 @@
 import React from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const Home = () => {
     return (
         <div className="flex flex-col items-center justify-center space-y-6">
-            <Helmet>
-                <title>Bruno Lopes - Junior Web Developer</title>
-                <meta name="description" content="Personal website of Bruno Lopes, a junior web developer passionate about coding and solving complex problems." />
-                <meta property="og:title" content="Bruno Lopes - Junior Web Developer" />
-                <meta property="og:description" content="Personal website of Bruno Lopes, a junior web developer passionate about coding and solving complex problems." />
-                <meta property="og:image" content="/profile.jpg" />
-                <meta property="og:url" content="https://brunolopesweb.netlify.app/" />
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Bruno Lopes - Junior Web Developer" />
-                <meta name="twitter:description" content="Personal website of Bruno Lopes, a junior web developer passionate about coding and solving complex problems." />
-                <meta name="twitter:image" content="/path/to/your/image.jpg" />
-            </Helmet>
+            <HelmetProvider>
+                <Helmet>
+                    <title>Bruno Lopes - Junior Web Developer</title>
+                    <meta name="description" content="Personal website of Bruno Lopes, a junior web developer passionate about coding and solving complex problems." />
+                    <meta property="og:title" content="Bruno Lopes - Junior Web Developer" />
+                    <meta property="og:description" content="Personal website of Bruno Lopes, a junior web developer passionate about coding and solving complex problems." />
+                    <meta property="og:image" content="/profile.jpg" />
+                    <meta property="og:url" content="https://brunolopesweb.netlify.app/" />
+                    <meta name="twitter:card" content="summary_large_image" />
+                    <meta name="twitter:title" content="Bruno Lopes - Junior Web Developer" />
+                    <meta name="twitter:description" content="Personal website of Bruno Lopes, a junior web developer passionate about coding and solving complex problems." />
+                    <meta name="twitter:image" content="/path/to/your/image.jpg" />
+                </Helmet>
+            </HelmetProvider>
             <div className="rounded-full overflow-hidden border-4 border-white">
                 <img src="/profile.jpg" alt="profile" className="rounded-full" />
             </div>
