@@ -19,7 +19,7 @@ const Home = () => {
                     <meta name="twitter:image" content="/path/to/your/image.jpg" />
                 </Helmet>
             </HelmetProvider>
-            <div className="rounded-full overflow-hidden border-4 border-white">
+            <div className="avatar">
                 <img src="/profile.jpg" alt="profile" className="rounded-full" />
             </div>
 
@@ -40,7 +40,7 @@ const Home = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    <FaGithub className="mr-1" /> GitHub
+                    <FaGithub className="heartbeat" /> GitHub
                 </a>
                 <a
                     href="https://www.linkedin.com/in/bruno-lopes-172223b9/"
@@ -48,11 +48,11 @@ const Home = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    <FaLinkedin className="mr-1" /> LinkedIn
+                    <FaLinkedin className="heartbeat" /> LinkedIn
                 </a>
             </div>
 
-            <div>
+            <div className="shake-lr">
                 <a
                     href="/BrunoLopes-cv.pdf"
                     download
