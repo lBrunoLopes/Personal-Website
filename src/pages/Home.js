@@ -19,9 +19,15 @@ const Home = () => {
                     <meta name="twitter:image" content="/path/to/your/image.jpg" />
                 </Helmet>
             </HelmetProvider>
-            <div className="avatar">
-                <img src="/profile.jpg" alt="profile" className="rounded-full" />
+            <div className="flip-box">
+                <div className="flip-box-front text-center">
+                    <img src="/profile.jpg" alt="profile" className="rounded-full" />
+                </div>
+                <div className="flip-box-back text-center">
+                    <h3 className="flip-box-header">Lets test to see how it works</h3>
+                </div>
             </div>
+
 
             <div className="text-center">
                 <p className="text-4xl font-bold text-gray-800">Bruno Lopes</p>

@@ -132,7 +132,7 @@ body {
     margin: 0;
   }
   
-@keyframes float {
+/* @keyframes float {
     0% {
       box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
       transform: translatey(0px);
@@ -159,46 +159,80 @@ body {
 	transform: translatey(0px);
 	animation: float 6s ease-in-out infinite;
 	img { width: 100%; height: auto; }
+} */
+
+.flip-box {
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
 }
 
-@-webkit-keyframes tracking-out-expand {
-  0% {
-    opacity: 1;
-  }
-  60% {
-    opacity: 0.8;
-  }
-  100% {
-    letter-spacing: 1em;
-    opacity: 0;
-  }
+.flip-box-front,
+.flip-box-back {
+  margin-top: 2rem;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  -ms-transition: transform 0.7s cubic-bezier(.4,.2,.2,1);
+  transition: transform 0.7s cubic-bezier(.4,.2,.2,1);
+  -webkit-transition: transform 0.7s cubic-bezier(.4,.2,.2,1);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
-@keyframes tracking-out-expand {
-  0% {
-    opacity: 1;
-  }
-  60% {
-    opacity: 0.8;
-  }
-  100% {
-    letter-spacing: 1em;
-    opacity: 0;
-  }
+
+.flip-box-front {
+  -ms-transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
+
+.flip-box:hover .flip-box-front {
+  -ms-transform: rotateY(-180deg);
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.flip-box-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  
+  -ms-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.flip-box:hover .flip-box-back {
+  -ms-transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.flip-box-header {
+  font-size: 34px;
+}
+
 
 .tracking-out-expand {
   color: white;
   --tw-text-opacity: 1;
   font-size: 1.125rem/* 18px */;
   line-height: 1.75rem/* 28px */;
-	-webkit-animation: tracking-out-expand 5s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite both;
-	        animation: tracking-out-expand 5s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite both;
-  @media (min-width: 768px) {
-  .md\:text-xl {
-   font-size: 1.25rem/* 20px */;
-   line-height: 1.75rem/* 28px */;
-            }
-    }
 }
 
 @-webkit-keyframes heartbeat {
