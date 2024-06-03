@@ -32,7 +32,7 @@ const Home = () => {
                 <p className="text-4xl font-bold text-gray-800">Bruno Lopes</p>
             </div>
 
-            <p className="text-xl text-gray-700">Junior Web Developer</p>
+            <p className="text-xl text-gray-700">Web Developer</p>
 
             <div className="flex space-x-4">
                 <a

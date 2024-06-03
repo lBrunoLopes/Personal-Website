@@ -186,7 +186,7 @@ body {
   
   .flip-box-header {
     text-align: center;
-    font-size: clamp(1rem, 4vw, 2rem);
+    font-size: clamp(1rem, 4vw, 1.8rem);
     color: hsl(0 0% 98%);
     margin: 0;
     padding: 1;
@@ -273,6 +273,9 @@ body {
   margin-right: 0.25rem;
 	-webkit-animation: heartbeat 1.5s ease-in-out infinite both;
 	        animation: heartbeat 1.5s ease-in-out infinite both;
+}
+a svg.heartbeat {
+  font-size: 110%;
 }
 
 .glow-on-hover {
