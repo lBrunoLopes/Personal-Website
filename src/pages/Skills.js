@@ -14,9 +14,35 @@ import { IoLogoGithub } from "react-icons/io";
 
 const Skills = () => {
     return (
-        <div className="container mx-auto px-4 sm:px-6 lg:px-10 mt-8">
-            <h2 className="text-4xl font-bold text-center mb-8">Skills</h2>
-            <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div className="mx-auto px-4 sm:px-6 lg:px-10 mt-8">
+            <div class="overlay"></div>
+            <div class="text">
+                <div class="wrapper">
+                    <div id="L" class="letter">S</div>
+                    <div class="shadow">S</div>
+                </div>
+                <div class="wrapper">
+                    <div id="I" class="letter">K</div>
+                    <div class="shadow">K</div>
+                </div>
+                <div class="wrapper">
+                    <div id="G" class="letter">I</div>
+                    <div class="shadow">I</div>
+                </div>
+                <div class="wrapper">
+                    <div id="H" class="letter">L</div>
+                    <div class="shadow">L</div>
+                </div>
+                <div class="wrapper">
+                    <div id="T" class="letter">L</div>
+                    <div class="shadow">L</div>
+                </div>
+                <div class="wrapper">
+                    <div id="N" class="letter">S</div>
+                    <div class="shadow">S</div>
+                </div>
+            </div>
+            <div className="caixa grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 <SkillLink href="https://www.javascript.com/" title="Javascript">
                     <IoLogoJavascript className="w-20 h-20 mx-auto" />
                 </SkillLink>

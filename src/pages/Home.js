@@ -23,18 +23,13 @@ const Home = () => {
                 <div className="flip-box-front text-center">
                     <img src="/profile.jpg" alt="profile" className="rounded-full" />
                 </div>
-                <div className="flip-box-back text-center">
-                    <h3 className="flip-box-header">Lets test to see how it works</h3>
-                </div>
+            <div className="flip-box-back text-center">
+                <h3 className="flip-box-header">Programmer who loves challenges!</h3>
             </div>
-
+            </div>
 
             <div className="text-center">
                 <p className="text-4xl font-bold text-gray-800">Bruno Lopes</p>
-            </div>
-
-            <div className="text-center">
-                <p className="text-2xl text-gray-600">Programmer who loves challenges!</p>
             </div>
 
             <p className="text-xl text-gray-700">Junior Web Developer</p>
@@ -58,17 +53,16 @@ const Home = () => {
                 </a>
             </div>
 
-            <div className="shake-lr">
+            <button className="glow-on-hover">
                 <a
                     href="/BrunoLopes-cv.pdf"
                     download
-                    className="text-gray-600 hover:text-gray-900 font-semibold"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
                     Download CV
                 </a>
-            </div>
+            </button>
         </div>
     );
 };

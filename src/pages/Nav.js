@@ -17,7 +17,7 @@ const Navbar = () => {
     return (
         <nav className="bg-gray-800 py-1">
             <div className="container mx-auto flex justify-between items-center px-4">
-              <Link to="/" className="tracking-out-expand">Personal Website</Link>
+              <Link to="/" className="flashing-dot">Personal Website<span> . </span> <span> . </span> <span> . </span></Link>
                 <div className="md:hidden">
                     <button
                         onClick={() => setIsOpen(!isOpen)}
